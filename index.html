@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
+        <style>
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -22,21 +22,18 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-        .project-card {
-            opacity: 0.5;
-            transform: scale(0.9);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-        .project-card.focused {
-            opacity: 1;
-            transform: scale(1.05);
+        .project-tag {
+            background-color: #374151;
+            color: #D1D5DB;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -105,17 +102,11 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20 bg-gray-900 section">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center text-white mb-12">My Projects</h2>
-                <div class="relative">
-                    <div id="projects-container" class="flex overflow-x-auto gap-8 py-4 no-scrollbar" style="scroll-behavior: smooth;">
-                        <!-- Projects will be dynamically inserted here -->
-                    </div>
-                    <button id="scroll-left" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800/50 hover:bg-gray-700/50 text-white p-2 rounded-full"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
-                    <button id="scroll-right" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800/50 hover:bg-gray-700/50 text-white p-2 rounded-full"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
-                </div>
+                <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <div id="show-more-container" class="text-center mt-8"></div>
             </div>
         </section>
 
