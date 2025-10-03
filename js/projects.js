@@ -24,7 +24,7 @@ const projects = [
         title: "Rift Augur",
         description: "Rift Augur is a backend platform tailored for League of Legends, providing intelligent matchmaking, player analytics, and real-time notifications. It is designed to enhance the player experience by leveraging advanced data analysis and scalable infrastructure, specifically for the League of Legends ecosystem.",
         codeUrl: "https://github.com/khyeo1011/Rift-Augur",
-        tags: ["React", "Flask", "Python", "JavaScript"],
+        tags: ["React", "Flask", "Python", "TypeScript", "Redis", "DynamoDB"],
         demoUrl: "https://home.sebastianyeo.me/notyet.md",
         display: true
     }
