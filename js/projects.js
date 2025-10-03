@@ -74,7 +74,6 @@ function renderProjects() {
         });
     }
 }
-
 function createProjectHTML(project) {
     const tagsHTML = project.tags.map(tag => `
         <span class="project-tag">${tag}</span>
