@@ -18,7 +18,7 @@ const projects = [
         description: "An academic project engineering a game tracking application with Java Swing for the GUI, using test-driven design principles and JSON for data persistence.",
         codeUrl: "https://github.com/khyeo1011/CPSC210-Project",
         tags: ["Java", "Swing", "JUnit"],
-        display: false
+        display: true
     },
     {
         title: "Rift Augur",
@@ -27,6 +27,14 @@ const projects = [
         tags: ["React", "Flask", "Python", "TypeScript", "Redis", "DynamoDB"],
         demoUrl: "https://home.sebastianyeo.me/notyet.md",
         display: true
+    },
+    {
+        "title": "Buss-in-it",
+        "description": "Buss-in-it is an engaging web game that transforms public transit waiting into a social prediction challenge. Using real-time Translink GTFS data, players predict whether buses will arrive on time or late, competing on a global leaderboard and integrating machine learning models for bus delay prediction.",
+        "codeUrl": "https://github.com/khyeo1011/stormhacks2025",
+        "tags": ["React.js", "Flask", "Python", "TypeScript", "PostgreSQL", "Docker", "Machine Learning"],
+        "demoUrl": "https://home.sebastianyeo.me/notyet.md",
+        "display": true
     }
 ];
 
