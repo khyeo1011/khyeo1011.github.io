@@ -29,12 +29,20 @@ const projects = [
         display: true
     },
     {
-        "title": "Buss-in-it",
-        "description": "Buss-in-it is an engaging web game that transforms public transit waiting into a social prediction challenge. Using real-time Translink GTFS data, players predict whether buses will arrive on time or late, competing on a global leaderboard and integrating machine learning models for bus delay prediction.",
-        "codeUrl": "https://github.com/khyeo1011/stormhacks2025",
-        "tags": ["React.js", "Flask", "Python", "TypeScript", "PostgreSQL", "Docker", "Machine Learning"],
-        "demoUrl": "https://home.sebastianyeo.me/notyet.md",
-        "display": true
+        title: "Buss-in-it",
+        description: "Buss-in-it is an engaging web game that transforms public transit waiting into a social prediction challenge. Using real-time Translink GTFS data, players predict whether buses will arrive on time or late, competing on a global leaderboard and integrating machine learning models for bus delay prediction.",
+        codeUrl: "https://github.com/khyeo1011/stormhacks2025",
+        tags: ["React.js", "Flask", "Python", "TypeScript", "PostgreSQL", "Docker", "Machine Learning"],
+        demoUrl: "https://home.sebastianyeo.me/notyet.md",
+        display: true
+    },
+    {
+        title: "Bad Volume-Ui",
+        description: "Bad Volume-Ui is a web page with a bad volume slider. It is built with standard HTML, CSS, and JavaScript. The project aims to demonstrate a custom volume slider that is not user-friendly.",
+        codeUrl: "https://github.com/khyeo1011/funvolume",
+        tags: ["HTML", "CSS", "JavaScript"],
+        demoUrl: "https://volume.sebastianyeo.me/",
+        display: true
     }
 ];
 
