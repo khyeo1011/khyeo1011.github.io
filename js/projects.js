@@ -49,7 +49,6 @@ const projects = [
         description: "An intelligent assistant for Jira Cloud enabling natural language querying and analysis of issue data. Features real-time voice-to-text interaction via the Web Speech API and AI-powered insights using Google's Gemini models. Built on the Atlassian Forge platform with a React frontend.",
         codeUrl: "https://github.com/khyeo1011/dubhacks25",
         tags: ["Atlassian Forge", "React", "Google Gemini", "Web Speech API", "Node.js"],
-        demoUrl: "https://uw-dh25.atlassian.net",
         display: true
     }
 ];
