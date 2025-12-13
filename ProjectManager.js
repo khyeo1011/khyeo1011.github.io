@@ -78,6 +78,66 @@ async function addProject() {
     }
 }
 
+async function editProject() {
+    const allFiles = await listProjects();
+    const selection = await ask('\nEnter number to EDIT: ');
+    const index = parseInt(selection) - 1;
+
+    if (index >= 0 && index < allFiles.length) {
+        const oldFilename = allFiles[index];
+        const filePath = path.join(PROJECTS_DIR, oldFilename);
+        const project = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+        console.log(`\n--- Editing ${project.title} ---`);
+        console.log('Press Enter to keep current value.');
+
+        const title = await ask(`Title (${project.title}): `);
+        if (title.trim()) project.title = title.trim();
+
+        const descPreview = project.description.length > 50 ? project.description.substring(0, 50) + '...' : project.description;
+        const description = await ask(`Description (${descPreview}): `);
+        if (description.trim()) project.description = description.trim();
+
+        const codeUrl = await ask(`Code URL (${project.codeUrl}): `);
+        if (codeUrl.trim()) project.codeUrl = codeUrl.trim();
+
+        const currentDemo = project.demoUrl || '';
+        const demoUrl = await ask(`Demo URL (${currentDemo || 'none'}): `);
+        if (demoUrl.trim()) project.demoUrl = demoUrl.trim();
+
+        const currentTags = project.tags.join(', ');
+        const tagsInput = await ask(`Tags (${currentTags}): `);
+        if (tagsInput.trim()) {
+            project.tags = tagsInput.split(',').map(t => t.trim()).filter(t => t);
+        }
+        const currentDisplay = project.display ? 'Yes' : 'No';
+        const display = await ask(`Display (${currentDisplay}): (y/n)`);
+        if (display.trim()) project.display = display.trim().toLowerCase() === 'y';
+
+
+        const newFilename = slugify(project.title) + '.json';
+        
+        if (newFilename !== oldFilename) {
+            const newPath = path.join(PROJECTS_DIR, newFilename);
+            fs.writeFileSync(newPath, JSON.stringify(project, null, 4));
+            fs.unlinkSync(filePath);
+            
+            const indexData = getIndex();
+            const idx = indexData.indexOf(oldFilename);
+            if (idx !== -1) {
+                indexData[idx] = newFilename;
+                saveIndex(indexData);
+            }
+            console.log(`Updated and renamed to ${newFilename}`);
+        } else {
+            fs.writeFileSync(filePath, JSON.stringify(project, null, 4));
+            console.log('Project updated.');
+        }
+    } else {
+        console.log('Invalid selection');
+    }
+}
+
 async function toggleVisibility() {
     const allFiles = await listProjects();
     const selection = await ask('\nEnter number to toggle visibility: ');
@@ -136,14 +196,15 @@ async function main() {
     if (!fs.existsSync(PROJECTS_DIR)) fs.mkdirSync(PROJECTS_DIR);
     while (true) {
         console.log('\n=== PROJECT MANAGER ===');
-        console.log('1. List Projects\n2. Add New Project\n3. Toggle Visibility\n4. Delete Project\n5. Push to GitHub\n6. Exit');
+        console.log('1. List Projects\n2. Add New Project\n3. Edit Project\n4. Toggle Visibility\n5. Delete Project\n6. Push to GitHub\n7. Exit');
         const answer = await ask('\nSelect option: ');
         if (answer === '1') await listProjects();
         else if (answer === '2') await addProject();
-        else if (answer === '3') await toggleVisibility();
-        else if (answer === '4') await deleteProject();
-        else if (answer === '5') await pushToGithub();
-        else if (answer === '6') { rl.close(); process.exit(0); }
+        else if (answer === '3') await editProject();
+        else if (answer === '4') await toggleVisibility();
+        else if (answer === '5') await deleteProject();
+        else if (answer === '6') await pushToGithub();
+        else if (answer === '7') { rl.close(); process.exit(0); }
     }
 }
 

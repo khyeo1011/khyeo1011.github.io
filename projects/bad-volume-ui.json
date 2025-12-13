@@ -2,7 +2,11 @@
     "title": "Bad Volume-Ui",
     "description": "Bad Volume-Ui is a web page with a bad volume slider. It is built with standard HTML, CSS, and JavaScript. The project aims to demonstrate a custom volume slider that is not user-friendly.",
     "codeUrl": "https://github.com/khyeo1011/funvolume",
-    "tags": ["HTML", "CSS", "JavaScript"],
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
     "demoUrl": "https://volume.sebastianyeo.me/",
     "display": true
 }
