@@ -1,0 +1,7 @@
+{
+    "title": "Goofy Physics Engine",
+    "description": "A physics engine developed from scratch using C++ and OpenGL, implementing object-oriented design for a scalable codebase and robust collision detection/response mechanics.",
+    "codeUrl": "https://github.com/khyeo1011/goofyphysicsengine",
+    "tags": ["C++", "OpenGL"],
+    "display": true
+}

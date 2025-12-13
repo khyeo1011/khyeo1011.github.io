@@ -1,57 +1,21 @@
-const projects = [
-    {
-        title: "Goofy Physics Engine",
-        description: "A physics engine developed from scratch using C++ and OpenGL, implementing object-oriented design for a scalable codebase and robust collision detection/response mechanics.",
-        codeUrl: "https://github.com/khyeo1011/goofyphysicsengine",
-        tags: ["C++", "OpenGL"],
-        display: true
-    },
-    {
-        title: "Heart Disease Classification Models",
-        description: "Evaluated eight machine learning algorithms to forecast heart disease likelihood. Engineered and optimized an SVM classifier that achieved approximately 70% accuracy.",
-        codeUrl: "https://github.com/khyeo1011/heartdiseaseclassification",
-        tags: ["Python", "Scikit-learn", "Pandas"],
-        display: true
-    },
-    {
-        title: "GamecketList",
-        description: "An academic project engineering a game tracking application with Java Swing for the GUI, using test-driven design principles and JSON for data persistence.",
-        codeUrl: "https://github.com/khyeo1011/CPSC210-Project",
-        tags: ["Java", "Swing", "JUnit"],
-        display: true
-    },
-    {
-        title: "Rift Augur",
-        description: "Rift Augur is a backend platform tailored for League of Legends, providing intelligent matchmaking, player analytics, and real-time notifications. It is designed to enhance the player experience by leveraging advanced data analysis and scalable infrastructure, specifically for the League of Legends ecosystem.",
-        codeUrl: "https://github.com/khyeo1011/Rift-Augur",
-        tags: ["React", "Flask", "Python", "TypeScript", "Redis", "DynamoDB"],
-        demoUrl: "https://home.sebastianyeo.me/notyet.md",
-        display: true
-    },
-    {
-        title: "Buss-in-it",
-        description: "Buss-in-it is an engaging web game that transforms public transit waiting into a social prediction challenge. Using real-time Translink GTFS data, players predict whether buses will arrive on time or late, competing on a global leaderboard and integrating machine learning models for bus delay prediction.",
-        codeUrl: "https://github.com/khyeo1011/stormhacks2025",
-        tags: ["React.js", "Flask", "Python", "TypeScript", "PostgreSQL", "Docker", "Machine Learning"],
-        demoUrl: "https://home.sebastianyeo.me/notyet.md",
-        display: true
-    },
-    {
-        title: "Bad Volume-Ui",
-        description: "Bad Volume-Ui is a web page with a bad volume slider. It is built with standard HTML, CSS, and JavaScript. The project aims to demonstrate a custom volume slider that is not user-friendly.",
-        codeUrl: "https://github.com/khyeo1011/funvolume",
-        tags: ["HTML", "CSS", "JavaScript"],
-        demoUrl: "https://volume.sebastianyeo.me/",
-        display: true
-    },
-    {
-        title: "JiraGenie",
-        description: "An intelligent assistant for Jira Cloud enabling natural language querying and analysis of issue data. Features real-time voice-to-text interaction via the Web Speech API and AI-powered insights using Google's Gemini models. Built on the Atlassian Forge platform with a React frontend.",
-        codeUrl: "https://github.com/khyeo1011/dubhacks25",
-        tags: ["Atlassian Forge", "React", "Google Gemini", "Web Speech API", "Node.js"],
-        display: false
+let projects = [];
+
+async function loadProjects() {
+    try {
+        const response = await fetch('projects/index.json');
+        if (!response.ok) throw new Error('Failed to load project index');
+        const files = await response.json();
+
+        const promises = files.map(file => fetch(`projects/${file}`).then(res => res.json()));
+        projects = await Promise.all(promises);
+
+        renderProjects();
+    } catch (error) {
+        console.error('Error loading projects:', error);
     }
-];
+}
+
+document.addEventListener('DOMContentLoaded', loadProjects);
 
 function renderProjects() {
     const projectsContainer = document.getElementById('projects-container');

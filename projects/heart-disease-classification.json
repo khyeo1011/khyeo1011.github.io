@@ -1,0 +1,7 @@
+{
+    "title": "Heart Disease Classification Models",
+    "description": "Evaluated eight machine learning algorithms to forecast heart disease likelihood. Engineered and optimized an SVM classifier that achieved approximately 70% accuracy.",
+    "codeUrl": "https://github.com/khyeo1011/heartdiseaseclassification",
+    "tags": ["Python", "Scikit-learn", "Pandas"],
+    "display": true
+}
