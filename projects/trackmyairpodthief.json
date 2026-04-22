@@ -1,0 +1,7 @@
+{
+    "title": "TrackMyAirPodThief",
+    "description": "TrackMyAirPodThief is a specialized recovery tool designed to monitor and log the location of stolen or lost AirPods. By interfacing with Apple's Find My network via the OpenHaystack framework, it provides a real-time dashboard that tracks geographic history, battery status, and movement patterns of a target device to assist in recovery efforts.",
+    "codeUrl": "https://github.com/khyeo1011/trackmyairpodthief",
+    "tags": ["Python", "Next.js", "TypeScript", "Flask", "Tailwind CSS", "OpenHaystack", "Geolocation"],
+    "display": true
+}

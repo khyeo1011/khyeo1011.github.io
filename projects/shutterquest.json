@@ -1,0 +1,7 @@
+{
+    "title": "ShutterQuest",
+    "description": "ShutterQuest is a competitive multiplayer scavenger hunt powered by computer vision. Players join lobbies where an AI 'Oracle' issues cryptic prompts to find real-world artifacts. Adventurers race to capture photos of these items, which are evaluated by the OpenAI CLIP model based on 'Divine Confidence' (AI accuracy) and 'Temporal Speed' to determine the winner.",
+    "codeUrl": "https://github.com/khyeo1011/ShutterQuest",
+    "tags": ["Next.js", "Flask", "Python", "TypeScript", "OpenAI CLIP", "Supabase", "Computer Vision"],
+    "display": true
+}

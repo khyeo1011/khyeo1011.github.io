@@ -1,0 +1,7 @@
+{
+    "title": "SteamBridge",
+    "description": "SteamBridge is a high-performance, custom Layer 2/Layer 4 virtual tunneling application that routes raw Ethernet frames over the Steam P2P network. It features a memory-safe hot path for packet routing, a custom DPI engine for stateless port filtering, and automated IP address management (IPAM) to create a zero-configuration secure Virtual Private LAN.",
+    "codeUrl": "https://github.com/khyeo1011/steambridge",
+    "tags": ["Go", "Next.js", "Wails", "TypeScript", "Networking", "Steamworks SDK"],
+    "display": true
+}
